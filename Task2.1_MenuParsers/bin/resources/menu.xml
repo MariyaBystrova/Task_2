@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:menu xmlns:ns="http://www.example.org/MenuXMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/MenuXMLSchema MenuXMLSchema.xsd">
+
+	<ns:cold-snack>
+		<ns:dish id="id1.1">
+			<ns:photo>photo_1_1.jpg</ns:photo>
+			<ns:name>Ассорти рыбное</ns:name>
+			<ns:description>Слабосоленая форель, семга</ns:description>
+			<ns:portion-grams>100/20/15</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.2">
+			<ns:photo>photo_1_2.jpg</ns:photo>
+			<ns:name>Тарталетки с красной икрой</ns:name>
+			<ns:description>Тарталетки с красной икрой</ns:description>
+			<ns:portion-grams>60/50</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.3">
+			<ns:photo>photo_1_3.jpg</ns:photo>
+			<ns:name>Закуска по-русски</ns:name>
+			<ns:description>Кусочки атлантической сельди с отварным картофелем, луком, лимоном и зеленью</ns:description>
+			<ns:portion-grams>70/50/2/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.4">
+			<ns:photo>photo_1_4.jpg</ns:photo>
+			<ns:name>Куриный рулет</ns:name>
+			<ns:description>Куриный рулет собственного производства</ns:description>
+			<ns:portion-grams>100/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.5">
+			<ns:photo>photo_1_5.jpg</ns:photo>
+			<ns:name>Бастурма</ns:name>
+			<ns:description>Вяленая вырезка из говяжьего мяса</ns:description>
+			<ns:portion-grams>50/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.6">
+			<ns:photo>photo_1_6.jpg</ns:photo>
+			<ns:name>Ассорти мясное</ns:name>
+			<ns:description>Нарезка из буженины, бастуры, куриного рулета собственного производства и колбасы</ns:description>
+			<ns:portion-grams>100/30</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.7">
+			<ns:photo>photo_1_7.jpg</ns:photo>
+			<ns:name>Язык отварной</ns:name>
+			<ns:description>Нарезка нежного говяжьего языка, подается с хреном</ns:description>
+			<ns:portion-grams>80/20/1</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.8">
+			<ns:photo>photo_1_8.jpg</ns:photo>
+			<ns:name>Ассорти баклажаны</ns:name>
+			<ns:description>Жареные баклажаны с помидорами</ns:description>
+			<ns:portion-grams>100/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.9">
+			<ns:photo>photo_1_9.jpg</ns:photo>
+			<ns:name>Ассорти баклажаны</ns:name>
+			<ns:description>Жареные баклажаны с чесноком</ns:description>
+			<ns:portion-grams>100/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.10">
+			<ns:photo>photo_1_10.jpg</ns:photo>
+			<ns:name>Ассорти баклажаны</ns:name>
+			<ns:description>Жареные баклажаны с орехами</ns:description>
+			<ns:portion-grams>100/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.11">
+			<ns:photo>photo_1_11.jpg</ns:photo>
+			<ns:name>Соленья по-домашнему</ns:name>
+			<ns:description>Маринованные овощи</ns:description>
+			<ns:portion-grams>150/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.12">
+			<ns:photo>photo_1_12.jpg</ns:photo>
+			<ns:name>Бабушкины угощения</ns:name>
+			<ns:description>Ассорти из маринованных грибов</ns:description>
+			<ns:portion-grams>120/20/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.13">
+			<ns:photo>photo_1_13.jpg</ns:photo>
+			<ns:name>Сырная тарелка</ns:name>
+			<ns:description>Сыры Чечел, дор блю, российскийб мраморный</ns:description>
+			<ns:portion-grams>100/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.14">
+			<ns:photo>photo_1_14.jpg</ns:photo>
+			<ns:name>Брынза</ns:name>
+			<ns:description>Рассольный сыр, изготавливаемый из овечьего молока</ns:description>
+			<ns:portion-grams>75/5</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.15">
+			<ns:photo>photo_1_15.jpg</ns:photo>
+			<ns:name>Зелень</ns:name>
+			<ns:description>Кинза, лук, петрушка, укроп, базилик</ns:description>
+			<ns:portion-grams>30</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.16">
+			<ns:photo>photo_1_16.jpg</ns:photo>
+			<ns:name>Ассорти овощное</ns:name>
+			<ns:description>Свежие помидоры, болгарский перец, огурцы, редис и зелень</ns:description>
+			<ns:portion-grams>150/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.17">
+			<ns:photo>photo_1_17.jpg</ns:photo>
+			<ns:name>Овощной букет</ns:name>
+			<ns:description>Корейская морковь, капуста, фунчоза</ns:description>
+			<ns:portion-grams>150/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.18">
+			<ns:photo>photo_1_18.jpg</ns:photo>
+			<ns:name>Овощи по-армянски</ns:name>
+			<ns:description>Мелко нарезанные свежие помидоры, огурцы, болгарский перец, укроп, базилик, кинза, лист салата, зелень</ns:description>
+			<ns:portion-grams>150/40</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.19">
+			<ns:photo>photo_1_19.jpg</ns:photo>
+			<ns:name>Сеньор помидор</ns:name>
+			<ns:description>Помидор, фаршированный сырным муссом</ns:description>
+			<ns:portion-grams>150/1</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.20">
+			<ns:photo>photo_1_20.jpg</ns:photo>
+			<ns:name>Фестиваль салатов</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>400/10</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.21">
+			<ns:photo>photo_1_21.jpg</ns:photo>
+			<ns:name>Оливки, маслины</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>50</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.22">
+			<ns:photo>photo_1_22.jpg</ns:photo>
+			<ns:name>Лимон</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>60</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id1.23">
+			<ns:photo>photo_1_23.jpg</ns:photo>
+			<ns:name>Мацони</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>300</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+	</ns:cold-snack>
+	 
+	<ns:hot-snack>
+		<ns:dish id="id2.1">
+			<ns:photo>photo_2_1.jpg</ns:photo>
+			<ns:name>Лобио с шампиньонами</ns:name>
+			<ns:description>Фасоль с шампиньонами и грецким орехом</ns:description>
+			<ns:portion-grams>150/5</ns:portion-grams>
+			<ns:price>105</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.2">
+			<ns:photo>photo_2_2.jpg</ns:photo>
+			<ns:name>Жульен</ns:name>
+			<ns:description>С курицей</ns:description>
+			<ns:portion-grams>120/1</ns:portion-grams>
+			<ns:price>145</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.3">
+			<ns:photo>photo_2_3.jpg</ns:photo>
+			<ns:name>Жульен</ns:name>
+			<ns:description>С грибами</ns:description>
+			<ns:portion-grams>120/1</ns:portion-grams>
+			<ns:price>155</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.4">
+			<ns:photo>photo_2_4.jpg</ns:photo>
+			<ns:name>Ахтамар мясной</ns:name>
+			<ns:description>Колбаса, ветчина, буженинна, сыр, запеченные на мангале в лаваше</ns:description>
+			<ns:portion-grams>1 шт.</ns:portion-grams>
+			<ns:price>165</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.5">
+			<ns:photo>photo_2_5.jpg</ns:photo>
+			<ns:name>Ахтамар с овощами</ns:name>
+			<ns:description>Сыр, помидоры, зелень, запеченные на мангале в лаваше</ns:description>
+			<ns:portion-grams>1 шт.</ns:portion-grams>
+			<ns:price>150</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.6">
+			<ns:photo>photo_2_6.jpg</ns:photo>
+			<ns:name>Сюрприз</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>1 шт.</ns:portion-grams>
+			<ns:price>260</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.7">
+			<ns:photo>photo_2_7.jpg</ns:photo>
+			<ns:name>Креветки</ns:name>
+			<ns:description>Отварные</ns:description>
+			<ns:portion-grams>120/30</ns:portion-grams>
+			<ns:price>135</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.8">
+			<ns:photo>photo_2_8.jpg</ns:photo>
+			<ns:name>Креветки</ns:name>
+			<ns:description>Жаренные</ns:description>
+			<ns:portion-grams>120/30</ns:portion-grams>
+			<ns:price>155</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.9">
+			<ns:photo>photo_2_9.jpg</ns:photo>
+			<ns:name>Мидии по-турецки</ns:name>
+			<ns:description>Мидии, фаршированные сыром и грецким орехом</ns:description>
+			<ns:portion-grams>150/30</ns:portion-grams>
+			<ns:price>190</ns:price>
+		</ns:dish>
+		<ns:dish id="id2.10">
+			<ns:photo>photo_2_10.jpg</ns:photo>
+			<ns:name>Эскарго</ns:name>
+			<ns:description>Виноградные улитки, фаршированные по-бургундски</ns:description>
+			<ns:portion-grams>12 шт.</ns:portion-grams>
+			<ns:price>230</ns:price>
+		</ns:dish>
+	</ns:hot-snack>
+	
+	<ns:breakfast>
+		<ns:dish id="id3.1">
+			<ns:photo>photo_3_1.jpg</ns:photo>
+			<ns:name>Глазунья</ns:name>
+			<ns:description>2 яйца(на выбор: ветчина, сыр, помидоры)</ns:description>
+			<ns:portion-grams>150</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id3.2">
+			<ns:photo>photo_3_2.jpg</ns:photo>
+			<ns:name>Омлет</ns:name>
+			<ns:description></ns:description>
+			<ns:portion-grams>100</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+		<ns:dish id="id3.3">
+			<ns:photo>photo_3_3.jpg</ns:photo>
+			<ns:name>Блинчики с мясом</ns:name>
+			<ns:description>Жаренные блинчики с мясом</ns:description>
+			<ns:portion-grams>150</ns:portion-grams>
+			<ns:price>0</ns:price>
+		</ns:dish>
+	</ns:breakfast>
+</ns:menu>

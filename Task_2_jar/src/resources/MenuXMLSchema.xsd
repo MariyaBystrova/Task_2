@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/MenuXMLSchema"
+	xmlns:tns="http://www.example.org/MenuXMLSchema" elementFormDefault="qualified">
+
+	<element name="menu" type="tns:Menu" />
+
+	<complexType name="Menu">
+		<sequence>
+			<element name="cold-snack" type="tns:Element" />
+			<element name="hot-snack" type="tns:Element" />
+			<element name="breakfast" type="tns:Element" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Element">
+		<sequence>
+			<element name="dish" type="tns:Dish" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	
+	<complexType name="Dish">
+		<sequence>
+			<element name="photo" type="string" />
+			<element name="name" type="tns:Name" />
+			<element name="description" type="string" />
+			<element name="portion-grams" type="string" />
+			<element name="price" type="int" />
+		</sequence>
+		<attribute name="id" type="ID" use="required" />
+	</complexType>
+
+	<simpleType name="Name">
+		<restriction base="string">
+			<enumeration value="Ассорти рыбное" />
+			<enumeration value="Тарталетки с красной икрой" />
+			<enumeration value="Закуска по-русски" />
+			<enumeration value="Куриный рулет" />
+			<enumeration value="Бастурма" />
+			<enumeration value="Ассорти мясное" />
+			<enumeration value="Язык отварной" />
+			<enumeration value="Ассорти баклажаны" />
+			<enumeration value="Соленья по-домашнему" />
+			<enumeration value="Бабушкины угощения" />
+			<enumeration value="Сырная тарелка" />
+			<enumeration value="Брынза" />
+			<enumeration value="Зелень" />
+			<enumeration value="Ассорти овощное" />
+			<enumeration value="Овощной букет" />
+			<enumeration value="Овощи по-армянски" />
+			<enumeration value="Сеньор помидор" />
+			<enumeration value="Фестиваль салатов" />
+			<enumeration value="Оливки, маслины" />
+			<enumeration value="Лимон" />
+			<enumeration value="Мацони" />
+
+
+			<enumeration value="Лобио с шампиньонами" />
+			<enumeration value="Жульен" />
+			<enumeration value="Ахтамар мясной" />
+			<enumeration value="Ахтамар с овощами" />
+			<enumeration value="Сюрприз" />
+			<enumeration value="Креветки" />
+			<enumeration value="Мидии по-турецки" />
+			<enumeration value="Эскарго" />
+
+			<enumeration value="Глазунья" />
+			<enumeration value="Омлет" />
+			<enumeration value="Блинчики с мясом" />
+		</restriction>
+	</simpleType>
+</schema>

@@ -10,6 +10,7 @@ import javax.xml.stream.XMLStreamReader;
 import by.epam.tr.cafe.entity.Dish;
 import by.epam.tr.cafe.entity.Menu;
 import by.epam.tr.cafe.entity.MenuTagName;
+import by.epam.tr.cafe.parsers.helper.StringValues;
 
 public class StaxMenuParser {
 
@@ -25,14 +26,14 @@ public class StaxMenuParser {
 
 			switch (type) {
 			case XMLStreamConstants.START_ELEMENT:
-				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace("-", "_"));
+				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace(StringValues.DASH, StringValues.UNDERLINE));
 				dish = startElementProcess(reader, elementName, dish);
 				break;
 			case XMLStreamConstants.CHARACTERS:
 				charactersProcess(reader, elementName, dish);
 				break;
 			case XMLStreamConstants.END_ELEMENT:
-				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace("-", "_"));
+				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace(StringValues.DASH, StringValues.UNDERLINE));
 				endElementProcess(elementName, dish, dishList, menu);
 				break;
 			}
@@ -44,7 +45,7 @@ public class StaxMenuParser {
 	private static Dish startElementProcess(XMLStreamReader reader, MenuTagName elementName, Dish dish) {
 		if (elementName == MenuTagName.DISH) {
 			dish = new Dish();
-			dish.setId(reader.getAttributeValue(null, "id"));
+			dish.setId(reader.getAttributeValue(null, StringValues.ATTR_ID));
 		}
 		return dish;
 	}

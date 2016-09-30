@@ -8,6 +8,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
 
 import by.epam.tr.cafe.entity.Menu;
+import by.epam.tr.cafe.parsers.helper.StringValues;
 import by.epam.tr.cafe.service.MenuService;
 
 public class SaxDemo {
@@ -15,12 +16,12 @@ public class SaxDemo {
 		XMLReader reader = XMLReaderFactory.createXMLReader();
 		MenuSaxHandler handler = new MenuSaxHandler();
 		reader.setContentHandler(handler);
-		reader.parse(new InputSource("src/resources/menu.xml"));
+		reader.parse(new InputSource(StringValues.RESOURCE));
 
-		reader.setFeature("http://xml.org/sax/features/validation", true);
-		reader.setFeature("http://xml.org/sax/features/namespaces", true);
-		reader.setFeature("http://xml.org/sax/features/string-interning", true);
-		reader.setFeature("http://apache.org/xml/features/validation/schema", true);
+		reader.setFeature(StringValues.FEATURE_VALIDATION, true);
+		reader.setFeature(StringValues.FEATURE_NAMESPACE, true);
+		reader.setFeature(StringValues.FEATURE_STRING_INTERNING, true);
+		reader.setFeature(StringValues.FEATURE_VALIDATION_SCHEMA, true);
 		
 		Menu menu = handler.getMenu();
 		MenuService.printMenu(menu);

@@ -10,6 +10,7 @@ import org.w3c.dom.NodeList;
 
 import by.epam.tr.cafe.entity.Dish;
 import by.epam.tr.cafe.entity.Menu;
+import by.epam.tr.cafe.parsers.helper.StringValues;
 
 public class DomMenuParser {
 	
@@ -17,14 +18,14 @@ public class DomMenuParser {
 		Menu menu = new Menu();
 		Element root = document.getDocumentElement();
 		
-		Element coldSnack = (Element) root.getElementsByTagName("ns:cold-snack").item(0);
-		Element hotSnack = (Element) root.getElementsByTagName("ns:hot-snack").item(0);
-		Element breakfast = (Element) root.getElementsByTagName("ns:breakfast").item(0);
+		Element coldSnack = (Element) root.getElementsByTagName(StringValues.TAG_COLD_SNACK_NS).item(0);
+		Element hotSnack = (Element) root.getElementsByTagName(StringValues.TAG_HOT_SNACK_NS).item(0);
+		Element breakfast = (Element) root.getElementsByTagName(StringValues.TAG_BREAKFAST_NS).item(0);
 		
 		
-		NodeList coldSnackNodes = getAllChilds(coldSnack, "ns:dish");
-		NodeList hotSnackNodes = getAllChilds(hotSnack, "ns:dish");
-		NodeList breakfastNodes = getAllChilds(breakfast, "ns:dish");
+		NodeList coldSnackNodes = getAllChilds(coldSnack, StringValues.TAG_DISH_NS);
+		NodeList hotSnackNodes = getAllChilds(hotSnack, StringValues.TAG_DISH_NS);
+		NodeList breakfastNodes = getAllChilds(breakfast, StringValues.TAG_DISH_NS);
 		
 		menu.setColdSnackList(nodeListAction(coldSnackNodes));
 		menu.setHotSnackList(nodeListAction(hotSnackNodes));
@@ -48,12 +49,12 @@ public class DomMenuParser {
 			Dish dish=new Dish();
 			Element dishElement = (Element) nList.item(i);
 			
-			dish.setId(dishElement.getAttribute("id"));
-			dish.setPhoto(getSingleChild(dishElement, "ns:photo").getTextContent().trim());
-			dish.setName(getSingleChild(dishElement, "ns:name").getTextContent().trim());
-			dish.setDescription(getSingleChild(dishElement, "ns:description").getTextContent().trim());
-			dish.setPortion(getSingleChild(dishElement, "ns:portion-grams").getTextContent().trim());
-			dish.setPrice(Integer.parseInt(getSingleChild(dishElement, "ns:price").getTextContent().trim()));
+			dish.setId(dishElement.getAttribute(StringValues.ATTR_ID));
+			dish.setPhoto(getSingleChild(dishElement, StringValues.TAG_PHOTO_NS).getTextContent().trim());
+			dish.setName(getSingleChild(dishElement, StringValues.TAG_NAME_NS).getTextContent().trim());
+			dish.setDescription(getSingleChild(dishElement, StringValues.TAG_DESCRIPTION_NS).getTextContent().trim());
+			dish.setPortion(getSingleChild(dishElement, StringValues.TAG_PORTION_NS).getTextContent().trim());
+			dish.setPrice(Integer.parseInt(getSingleChild(dishElement, StringValues.TAG_PRICE_NS).getTextContent().trim()));
 			
 			list.add(dish);
 		}

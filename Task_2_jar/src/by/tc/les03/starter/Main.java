@@ -6,12 +6,13 @@ import by.tc.les03.service.DomParser;
 import by.tc.les03.service.impl.DomFactory;
 
 public class Main {
-
+	private static final String RESOURCE = "src/resources/menu.xml";
+	
 	public static void main(String[] args) {
 		
 		DomFactory d = DomFactory.getInstance();
 		DomParser parser = d.create();
-		Document doc = parser.parse("src/resources/menu.xml");
+		Document doc = parser.parse(RESOURCE);
 		doc.getTree().get(0);
 		for(Element e: doc.getTree()){
 			System.out.println("    tagName:" + e.getTagName());

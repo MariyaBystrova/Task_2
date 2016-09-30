@@ -1,0 +1,15 @@
+package by.epam.tr.cafe.parsers.helper;
+
+public class StringValues {
+	public final static String TAG_DISH_NS = "ns:dish";
+	public final static String TAG_COLD_SNACK_NS = "ns:cold-snack";
+	public final static String TAG_HOT_SNACK_NS = "ns:hot-snack";
+	public final static String TAG_BREAKFAST_NS = "ns:breakfast";
+	public final static String ATTR_ID = "id";
+	public final static String TAG_PHOTO_NS = "ns:photo";
+	public final static String TAG_NAME_NS = "ns:name";
+	public final static String TAG_DESCRIPTION_NS = "ns:description";
+	public final static String TAG_PORTION_NS = "ns:portion-grams";
+	public final static String TAG_PRICE_NS = "ns:price";
+	
+}

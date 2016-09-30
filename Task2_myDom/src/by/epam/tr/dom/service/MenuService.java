@@ -10,15 +10,15 @@ public class MenuService {
 
 	public static void printMenu(Menu menu) {
 		
-		System.out.println(MenuTagName.COLD_SNACK + ":");
+		System.out.println(MenuTagName.COLD_SNACK);
 		for (Dish dish : menu.getColdSnackList()) {
 			System.out.println(dish);
 		}
-		System.out.println(MenuTagName.HOT_SNACK + ":");
+		System.out.println(MenuTagName.HOT_SNACK);
 		for (Dish dish : menu.getHotSnackList()) {
 			System.out.println(dish);
 		}
-		System.out.println(MenuTagName.BREAKFAST + ":");
+		System.out.println(MenuTagName.BREAKFAST);
 		for (Dish dish : menu.getBreakfastList()) {
 			System.out.println(dish);
 		}

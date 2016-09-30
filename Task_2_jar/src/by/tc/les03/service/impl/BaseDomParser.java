@@ -20,9 +20,10 @@ import by.tc.les03.entity.Text;
 import by.tc.les03.service.DomParser;
 
 public class BaseDomParser implements DomParser {
-	private final static String regex = "(<((/?)([\\w:\\-]+)((([ \\s]+)([\\w:\\-]+)=(\"[\\.\\w\\-:/ ]+\"))*))>)|"
+	private final static String REGEX = "(<((/?)([\\w:\\-]+)((([ \\s]+)([\\w:\\-]+)=(\"[\\.\\w\\-:/ ]+\"))*))>)|"
 			+ "(([/а-яА-Я\\., :\\w\\-&&[^<>]]+)<)";
-	private final static String regexAttribute = "([\\w:\\-]+)=\"([\\.\\w\\-:/ ]+)\"";
+	private final static String ATTRIBUTE_REGEX = "([\\w:\\-]+)=\"([\\.\\w\\-:/ ]+)\"";
+	private final static String ENCODING = "UTF-8";
 
 	public Document parse(String fileName) {
 		List<Element> stackOfElements = new ArrayList<Element>();
@@ -32,10 +33,10 @@ public class BaseDomParser implements DomParser {
 		PushbackReader pb = null;
 		try {
 			Path path = Paths.get(fileName);
-			br = Files.newBufferedReader(path, Charset.forName("UTF-8"));
+			br = Files.newBufferedReader(path, Charset.forName(ENCODING));
 			pb = new PushbackReader(br);
 
-			Pattern p = Pattern.compile(regex);
+			Pattern p = Pattern.compile(REGEX);
 			Matcher m;
 			StringBuilder s = new StringBuilder();
 
@@ -90,7 +91,7 @@ public class BaseDomParser implements DomParser {
 
 	private static void attributeProcess(Matcher m, Element e) {
 		String attrs = m.group(5);
-		Matcher matcherAttr = Pattern.compile(regexAttribute).matcher(attrs);
+		Matcher matcherAttr = Pattern.compile(ATTRIBUTE_REGEX).matcher(attrs);
 		while (matcherAttr.find()) {
 			Attribute a = new Attribute();
 			a.setName(matcherAttr.group(1));

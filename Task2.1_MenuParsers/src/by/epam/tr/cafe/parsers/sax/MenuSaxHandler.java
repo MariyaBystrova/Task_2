@@ -11,6 +11,7 @@ import org.xml.sax.helpers.DefaultHandler;
 import by.epam.tr.cafe.entity.Dish;
 import by.epam.tr.cafe.entity.Menu;
 import by.epam.tr.cafe.entity.MenuTagName;
+import by.epam.tr.cafe.parsers.helper.StringValues;
 
 public class MenuSaxHandler extends DefaultHandler {
 
@@ -30,9 +31,9 @@ public class MenuSaxHandler extends DefaultHandler {
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		text = new StringBuilder();
 
-		if (qName.equals("ns:dish")) {
+		if (qName.equals(StringValues.TAG_DISH_NS)) {
 			dish = new Dish();
-			dish.setId(attributes.getValue("id"));
+			dish.setId(attributes.getValue(StringValues.ATTR_ID));
 		}
 
 	}
@@ -43,7 +44,7 @@ public class MenuSaxHandler extends DefaultHandler {
 
 	public void endElement(String uri, String localName, String qName) throws SAXException {
 
-		MenuTagName tagName = MenuTagName.valueOf(localName.toUpperCase().replace("-", "_"));
+		MenuTagName tagName = MenuTagName.valueOf(localName.toUpperCase().replace(StringValues.DASH, StringValues.UNDERLINE));
 		switch (tagName) {
 		case PHOTO:
 			dish.setPhoto(text.toString());

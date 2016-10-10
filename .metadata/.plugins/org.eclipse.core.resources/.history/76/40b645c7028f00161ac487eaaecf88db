@@ -1,0 +1,101 @@
+package by.epam.tr.cafe.parsers.stax;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+
+import by.epam.tr.cafe.entity.Dish;
+import by.epam.tr.cafe.entity.Menu;
+import by.epam.tr.cafe.entity.MenuTagName;
+import by.epam.tr.cafe.parsers.helper.StringValues;
+
+public class StaxMenuParser {
+
+	public static Menu process(XMLStreamReader reader) throws XMLStreamException {
+
+		Menu menu = new Menu();
+		List<Dish> dishList = new ArrayList<Dish>();
+		Dish dish = null;
+		MenuTagName elementName = null;
+
+		while (reader.hasNext()) {
+			int type = reader.next();
+
+			switch (type) {
+			case XMLStreamConstants.START_ELEMENT:
+				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace(StringValues.DASH, StringValues.UNDERLINE));
+				dish = startElementProcess(reader, elementName, dish);
+				break;
+			case XMLStreamConstants.CHARACTERS:
+				charactersProcess(reader, elementName, dish);
+				break;
+			case XMLStreamConstants.END_ELEMENT:
+				elementName = MenuTagName.valueOf(reader.getLocalName().toUpperCase().replace(StringValues.DASH, StringValues.UNDERLINE));
+				endElementProcess(elementName, dish, dishList, menu);
+				break;
+			}
+		}
+
+		return menu;
+	}
+
+	private static Dish startElementProcess(XMLStreamReader reader, MenuTagName elementName, Dish dish) {
+		if (elementName == MenuTagName.DISH) {
+			dish = new Dish();
+			dish.setId(reader.getAttributeValue(null, StringValues.ATTR_ID));
+		}
+		return dish;
+	}
+
+	private static void charactersProcess(XMLStreamReader reader, MenuTagName elementName, Dish dish) {
+		String text = reader.getText().trim();
+		if (!text.isEmpty()) {
+			switch (elementName) {
+			case PHOTO:
+				dish.setPhoto(text);
+				break;
+			case NAME:
+				dish.setName(text);
+				break;
+			case DESCRIPTION:
+				if(text!="null"){
+				dish.setDescription(text);
+				}
+				break;
+			case PORTION_GRAMS:
+				dish.setPortion(text);
+				break;
+			case PRICE:
+				dish.setPrice(Integer.parseInt(text));
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	private static void endElementProcess(MenuTagName elementName, Dish dish, List<Dish> dishList, Menu menu) {
+		switch (elementName) {
+		case DISH:
+			dishList.add(dish);
+			break;
+		case COLD_SNACK:
+			menu.setColdSnackList(dishList);
+			dishList = new ArrayList<Dish>();
+			break;
+		case HOT_SNACK:
+			menu.setHotSnackList(dishList);
+			dishList = new ArrayList<Dish>();
+			break;
+		case BREAKFAST:
+			menu.setBreakfastList(dishList);
+			dishList = new ArrayList<Dish>();
+			break;
+		default:
+			break;
+		}
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Task2_myDom&apos; to &apos;Task2_DomWithJar&apos;" description="Rename resource &apos;Task2_myDom&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Task2_myDom" name="Task2_DomWithJar" stamp="1476356823452" updateReferences="true"/>
+</session>
